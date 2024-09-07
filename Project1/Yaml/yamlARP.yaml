@@ -1,0 +1,73 @@
+name: PKS2022/23
+pcap_name: all.pcap
+
+COMPLETE: []
+NOT COMPLETE:
+- number_comm: 1
+  packets: ''
+- frame_number: 22
+  len_frame_pcap: 60
+  len_frame_medium: 64
+  frame_type: Ethernet II
+  src_mac: CC:08:09:D4:00:00
+  dst_mac: FF:FF:FF:FF:FF:FF
+  ether_type: ARP
+  arp_opcode: REPLY
+  src_ip: 12.0.0.1
+  dst_ip: 12.0.0.1
+  hexa_frame: |
+    FF FF FF FF FF FF CC 08 09 D4 00 00 08 06 00 01
+    08 00 06 04 00 02 CC 08 09 D4 00 00 0C 00 00 01
+    FF FF FF FF FF FF 0C 00 00 01 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 1
+  packets: ''
+- frame_number: 43
+  len_frame_pcap: 60
+  len_frame_medium: 64
+  frame_type: Ethernet II
+  src_mac: CC:08:09:D4:00:00
+  dst_mac: FF:FF:FF:FF:FF:FF
+  ether_type: ARP
+  arp_opcode: REPLY
+  src_ip: 12.0.0.1
+  dst_ip: 12.0.0.1
+  hexa_frame: |
+    FF FF FF FF FF FF CC 08 09 D4 00 00 08 06 00 01
+    08 00 06 04 00 02 CC 08 09 D4 00 00 0C 00 00 01
+    FF FF FF FF FF FF 0C 00 00 01 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 1
+  packets: ''
+- frame_number: 53
+  len_frame_pcap: 60
+  len_frame_medium: 64
+  frame_type: Ethernet II
+  src_mac: CC:08:09:D4:00:00
+  dst_mac: FF:FF:FF:FF:FF:FF
+  ether_type: ARP
+  arp_opcode: REPLY
+  src_ip: 12.0.0.1
+  dst_ip: 12.0.0.1
+  hexa_frame: |
+    FF FF FF FF FF FF CC 08 09 D4 00 00 08 06 00 01
+    08 00 06 04 00 02 CC 08 09 D4 00 00 0C 00 00 01
+    FF FF FF FF FF FF 0C 00 00 01 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00
+- number_comm: 1
+  packets: ''
+- frame_number: 74
+  len_frame_pcap: 60
+  len_frame_medium: 64
+  frame_type: Ethernet II
+  src_mac: CC:08:09:D4:00:00
+  dst_mac: FF:FF:FF:FF:FF:FF
+  ether_type: ARP
+  arp_opcode: REPLY
+  src_ip: 12.0.0.1
+  dst_ip: 12.0.0.1
+  hexa_frame: |
+    FF FF FF FF FF FF CC 08 09 D4 00 00 08 06 00 01
+    08 00 06 04 00 02 CC 08 09 D4 00 00 0C 00 00 01
+    FF FF FF FF FF FF 0C 00 00 01 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00
