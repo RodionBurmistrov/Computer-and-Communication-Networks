@@ -1,0 +1,79 @@
+**Slovak University of Technology in Bratislava**  
+**Faculty of Informatics and Information Technologies**  
+
+**COMPUTER AND COMMUNICATION NETWORKS**  
+
+**Assignment 1**  
+
+**Network Communication Analyzer**  
+**Academic Year 2022/2023**  
+
+**Name:** Rodion Burmistrov  
+**Date:** 20.10.2022  
+**Instructor:** Ing. Miroslav Bahleda, PhD.  
+**Number of pages:** 10  
+
+- **Diagram of the solution's processing and functioning:**
+
+- **Proposed mechanism for protocol analysis at each layer**  
+  The project mainly focuses on protocols within the Ethernet II frame type. First, the embedded protocol in the frame's header is identified. A specially prepared text file contains a large number of them. However, this project mainly focuses on IPv4, IPv6, and ARP.
+
+  Then the packet proceeds along one of three paths (if it's Ethernet II).  
+  If it's IPv4, after identifying the source and destination IP addresses, I look at the embedded protocol. Again, using a text file, I check whether the packet falls under any known cases. In the project, I mainly highlight cases where it's TCP or UDP.
+
+  On the next layer, I need to determine if there's a port on the 4th layer that falls under a known category and note the name of each such port. I also use text files for assistance.
+
+  In the project, I examine the case of using a specific port associated with the UDP protocol – TFTP. The task is to list and identify all frames that communicate with the TFTP port. First, I record the data of the frame that has the TFTP port 69.
+
+  For the next packet, I check whether it matches the communication conditions. If so, I continue recording the frames in a list, which is then saved to a specially designated file until the communication ends.
+
+  In the resulting YAML document, the communication is marked as follows.
+
+- **Another embedded protocol in the frame header is ARP.**  
+  This is not deeply addressed in the project, but if there's a filter set for ARP, the program must find all request-reply pairs, or if a pair is missing, log the frame as incomplete communication. In the end, everything must be written into a special YAML file.
+
+  First, I gather information on whether the ARP frame is a reply or a request.
+
+  If the frame is a request, I go through all the frames until I find its reply. If I find one, I record both frames as complete communication in a list; if I don't, I log the frame as incomplete communication in a different list.
+
+  If the input frame is a reply, it automatically goes into the incomplete communication list because a reply can't come before a request.
+
+- **The final embedded protocol in the frame header was IPv6.**  
+  Although IPv6 was not analyzed in the project, it was important to note that identifying its source and destination IP addresses was entirely different from the others.
+
+  Here is the IP output for IPv6:  
+
+  Here is the IP output for the other protocols:
+
+- **Example of external file structure for protocol and port identification**  
+  First, a text file "ProtocolyStvorka.txt" is used, which I use when accepting an argument for the "-p" switch. This is for comparing whether the input argument is valid or not (although, frankly, it doesn't work for some reason, and the switch only throws an error if the input argument is missing). It looks as follows:
+
+  Another text file I use is "VnorenyTyp.txt." It helps identify the known protocol in the frame header. It contains the protocol name and its number, separated by a colon ":". It looks as follows:
+
+  The next text file I use is "VnorenyProtokol.txt." It helps identify the known embedded protocol. It contains the protocol name and its number, separated by a colon ":". It looks as follows:
+
+  The last two text files, "UDP.txt" and "TCP.txt," serve to identify known ports for the embedded UDP and TCP protocols. They have the port number and the known port name, separated by a colon. They look as follows:
+
+  UDP:  
+  TCP:
+
+- **Described user interface**  
+  The submitted file contains a "Documentation" folder, which includes this PDF documentation. The "Protocols" folder contains the text files that the program works with. The "Wireshark" folder contains pcap files to simplify the program's operation. For the same reason, there's also a "Yaml" folder with the final YAML files.
+
+  To run the program with filters, go to the command line from this folder and enter the command `python main.py -p argument`, where "argument" should be replaced with the filter. In my case, the filters are ARP and TFTP.
+
+  To change the examined .pcap file, change the directory at the beginning of the `main()` function.
+
+  And at the beginning of the `arpfunkcia()` function (if the ARP filter is used).
+
+  The result will be shown in the .yaml files.
+
+- **Choice of implementation environment**  
+  I chose the Python 3 programming language as the implementation environment, and PyCharm as the development environment.
+
+- **Evaluation and possible extensions**  
+  I believe I successfully completed the Network Communication Analyzer project. Tasks 1), 2), and 3) were successfully done, and from task 4), the switch, the TFTP protocol, and the ARP protocol (f, g, j) were completed. The only thing I didn't complete was the TCP protocol and the ICMP protocol, but the program could be extended to include these features.
+
+--- 
+
+Let me know if you need further assistance!
